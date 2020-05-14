@@ -1,21 +1,21 @@
 #!/bin/bash
 
-echo "Install dependencies (numpy, pandas, matplotlib)?[Y/N]"
+printf "Install dependencies (numpy, pandas, matplotlib)?[Y/N]"
 read d_install
 
 if [ -z "$d_install" ] || [ $d_install == "Y" ]; then
-    echo "installing numpy ..."
+    printf "installing numpy ..."
     pip3 install numpy -q
-    echo "done."
-    echo "\ninstalling pandas ..."
+    printf "done."
+    printf "\ninstalling pandas ..."
     pip3 install pandas -q
-    echo "done."
-    echo "\ninstalling matplotlib ..."
+    printf "done."
+    printf "\ninstalling matplotlib ..."
     pip3 install matplotlib -q
-    echo "done."
+    printf "done."
 fi
 
-echo "\n\nRun program?[Y/N]"
+printf "\n\nRun program?[Y/N]"
 read p_run
 
 if [ -z "$p_run" ] || [ $p_run == "Y" ]; then
