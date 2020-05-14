@@ -7,15 +7,15 @@ if [ -z "$d_install" ] || [ $d_install == "Y" ]; then
     echo "installing numpy ..."
     pip3 install numpy -q
     echo "done."
-    echo "installing pandas ..."
+    echo "\ninstalling pandas ..."
     pip3 install pandas -q
     echo "done."
-    echo "installing matplotlib ..."
+    echo "\ninstalling matplotlib ..."
     pip3 install matplotlib -q
     echo "done."
 fi
 
-echo "Run program?[Y/N]"
+echo "\n\nRun program?[Y/N]"
 read p_run
 
 if [ -z "$p_run" ] || [ $p_run == "Y" ]; then
