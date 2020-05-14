@@ -3,7 +3,7 @@
 echo "Install dependencies (numpy, pandas, matplotlib)?[Y/N]"
 read d_install
 
-if [ $d_install == "Y" ]; then
+if [ -z "$d_install" ] || [ $d_install == "Y" ]; then
     echo "installing numpy ..."
     pip3 install numpy -q
     echo "done."
@@ -18,6 +18,6 @@ fi
 echo "Run program?[Y/N]"
 read p_run
 
-if [ $p_run == "Y" ]; then
+if [ -z "$p_run" ] || [ $p_run == "Y" ]; then
     python3 main.py
 fi
