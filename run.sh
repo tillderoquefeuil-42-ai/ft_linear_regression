@@ -4,13 +4,11 @@ printf "Install dependencies (numpy, pandas, matplotlib)?[Y/N]"
 read d_install
 
 if [ -z "$d_install" ] || [ $d_install == "Y" ]; then
-    printf "\ninstalling numpy ..."
+    printf "\nInstalling numpy ..."
     pip3 install numpy -q
-    printf " Done."
-    printf "\ninstalling pandas ..."
+    printf " Done.\nInstalling pandas ..."
     pip3 install pandas -q
-    printf " Done."
-    printf "\ninstalling matplotlib ..."
+    printf " Done.\nInstalling matplotlib ..."
     pip3 install matplotlib -q
     printf " Done."
 fi
