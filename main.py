@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from ft_linear_regression import ft_linear_regression
+from drawGraph import drawGraph
+from estimatePrice import estimatePrice
 
 data = pd.read_csv("./resources/data.csv")
 
@@ -35,19 +37,31 @@ lr.fit_(X, Y)
 print("done.")
 
 MSE = lr.mse_(X, Y)
-print("\nthetas = {}\nmse = {}".format(lr.thetas.T, MSE))
+print("\nthetas = {}\nmse = {}\n".format(lr.thetas.T, MSE))
 
-predict = lr.predict_(X)
+selection = 0
+while selection != 3:
+    choices = [1, 2, 3]
 
-plt.plot(X, Y, 'bo', X, predict, 'r-')
+    selection = input("\nPlease select an option by typing the corresponding number:\n\
+1: Draw graphic\n\
+2: Estimate price\n\
+3: Quit\n")
 
-# options
-axes = plt.gca()
-axes.set_xlabel("milage / {} (in km)".format(int(1/reducer)))
-axes.set_ylabel("price / {}".format(int(1/reducer)))
+    if selection.isdigit():
+        selection = int(selection)
 
-plt.title("Car prices by mileage")
-plt.legend(["data set", "linear regression predictions"])
-plt.grid(True)
+    while not selection in choices:
+        selection = input("This option does not exist, please type the corresponding number.\n\
+To exit, enter 3.\n")
+        if selection.isdigit():
+            selection = int(selection)
 
-plt.show()
+    if selection == 1:
+        drawGraph(X, Y, lr, reducer)        
+    elif selection == 2:
+        estimatePrice(lr, reducer)
+
+
+
+
