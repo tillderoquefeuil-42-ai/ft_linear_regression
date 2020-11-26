@@ -58,7 +58,7 @@ To exit, enter 3.\n")
             selection = int(selection)
 
     if selection == 1:
-        drawGraph(X, Y, lr, reducer)        
+        drawGraph(X, Y, lr, reducer)      
     elif selection == 2:
         estimatePrice(lr, reducer)
 
